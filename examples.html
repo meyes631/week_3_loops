@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Examples</title>
+
+<script language="javascript" type="text/javascript" src="helpers/p5.js"></script>
+<script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+
+<style>
+body{
+	margin:40px;
+}
+.example{
+    float: left;
+}
+.editor{
+	width:600px;
+	height:400px;
+	float: left;
+}
+hr{clear: both;}
+</style>
+
+</head>
+<body>
+<h1>Examples</h1>
+
+<h2>Circles inside circles</h2>
+<iframe class="example" src="examples/target.html" width="400" height="400"></iframe>
+<div id="editor" class="editor">function setup() {
+
+	  createCanvas(400, 400);
+	  background("black");
+	  colorMode(HSB, 100);
+	  noFill();
+
+	  for(var i = 0; i < 20; i++){
+	    stroke(i*7,100,100);
+	    ellipse(200, 200, i * 30, i * 30);
+	  }
+	  
+	}</div>
+<hr />
+	<h2>Circles inside circles with Arrays</h2>
+<iframe class="example" src="examples/array.html" width="400" height="400"></iframe>
+<div id="editor6" class="editor">var sizes = [100,50,26,13,87];
+
+function setup() {
+
+  createCanvas(400, 400);
+
+  background("black");
+  stroke("white");
+  noFill();
+  
+  for(var x = 0; x < sizes.length; x++){
+  	ellipse(200, 200, sizes[x], sizes[x]);
+  }
+  
+}</div>
+<hr />
+<h2>Nested Loops with if statements</h2>
+
+<iframe class="example" src="examples/gameBoard.html" width="400" height="400"></iframe>
+<div id="editor1" class="editor">	function setup() {
+			createCanvas(400, 400);
+
+			background(0, 0, 0);
+			
+			for (var y = 0; y < 4; y++) {
+				for (var x = 0; x < 6; x++) {
+					rect(x * 100+10, y * 100+10, 70, 70);
+				}
+			}
+		}</div>
+
+<hr />
+<h2>Arrays and loops</h2>
+  
+<iframe class="example" src="examples/arrayloops.html" width="400" height="400"></iframe>
+<div id="editor2" class="editor">	
+var myArray = [
+	["circle","line","line","line"],
+	["line","circle","line","line"],
+	["line","line","circle","line"],
+	["line","line","line","circle"],
+];
+
+
+
+function setup() {
+
+  createCanvas(400, 400);
+
+  background("black");
+  stroke("white");
+  
+  for(var row = 0; row < myArray.length; row++){
+  	for(var column = 0; column < myArray[row].length;column++){
+  		if (myArray[row][column] == "circle"){
+  			ellipse(row*100, column*100, 100, 100);
+  		}
+
+  		else if (myArray[row][column] == "line")
+  			
+    		line(row*100, column*100, row*100+100 , column*100+100);
+
+  	}
+   
+  }
+  
+}
+</div>
+
+<hr />
+<h2>Follow the mouse</h2>
+  
+<iframe class="example" src="examples/followmouse.html" width="400" height="400"></iframe>
+<div id="editor3" class="editor">	
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+
+}
+
+function draw() {
+  background("lightblue");
+  fill("black");
+  ellipse(mouseX, mouseY, 100, 100);
+}
+
+</div>
+
+<hr />
+<h2>Change when the mouse clicks</h2>
+<iframe class="example" src="examples/onclick.html" width="400" height="400"></iframe>
+<div id="editor4" class="editor">	
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+}
+
+function draw() {
+	
+	
+	if (mouseIsPressed) {
+		background(255);
+		fill(0, 255, 0);
+		ellipse(width * 0.5, height * 0.5, 200, 200);
+	} else {
+		background(0);
+		fill(0, 0, 255);
+		ellipse(width * 0.5, height * 0.5, 200, 200);
+	}
+}
+</div>
+
+
+<hr />
+
+
+<h2>Animation</h2>
+
+<iframe class="example" src="examples/animation.html" width="400" height="400"></iframe>
+<div id="editor5" class="editor">var Yposition = 0;
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+}
+
+function draw() {
+
+	Yposition = Yposition + 1;
+
+	if (Yposition > windowHeight) {
+		Yposition = 0;
+	}
+
+	background("lightblue");
+	ellipse(200, Yposition, 50, 50);
+	
+}
+</div>
+<hr />
+<br /><br />
+
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/tomorrow");
+    editor.getSession().setMode("ace/mode/javascript");
+
+    var editor1 = ace.edit("editor1");
+    editor1.setTheme("ace/theme/tomorrow");
+    editor1.getSession().setMode("ace/mode/javascript");
+
+    var editor2 = ace.edit("editor2");
+    editor2.setTheme("ace/theme/tomorrow");
+    editor2.getSession().setMode("ace/mode/javascript");
+
+    var editor3 = ace.edit("editor3");
+    editor3.setTheme("ace/theme/tomorrow");
+    editor3.getSession().setMode("ace/mode/javascript");
+
+     var editor4 = ace.edit("editor4");
+    editor4.setTheme("ace/theme/tomorrow");
+    editor4.getSession().setMode("ace/mode/javascript");
+
+     var editor5 = ace.edit("editor5");
+    editor5.setTheme("ace/theme/tomorrow");
+    editor5.getSession().setMode("ace/mode/javascript");
+
+    var editor6 = ace.edit("editor6");
+    editor6.setTheme("ace/theme/tomorrow");
+    editor6.getSession().setMode("ace/mode/javascript");
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+	<script language="javascript" type="text/javascript" src="../helpers/p5.js"></script>
+  <style> body {padding: 0; margin: 0;} </style>
+  <script>
+
+  //==========================================
+  //Modify the game board to have different color squares in each row and column. Don't use random().
+  //==========================================
+
+
+  //Your code STARTS here
+		function setup() {
+			createCanvas(400, 400);
+
+			background(0, 0, 0);
+			
+			for (var y = 0; y < 4; y++) {
+				for (var x = 0; x < 4; x++) {
+					rect(x * 100+10, y * 100+10, 70, 70);
+				}
+			}
+		}
+		//Your code ENDS here
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+

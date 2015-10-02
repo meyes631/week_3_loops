@@ -1,0 +1,30 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+	<script language="javascript" type="text/javascript" src="../helpers/p5.js"></script>
+  <style> body {padding: 0; margin: 0;} </style>
+  <script>
+  
+
+  var sizes = [100,50,26,13,87];
+
+  function setup() {
+
+    createCanvas(400, 400);
+
+    background("black");
+    stroke("white");
+    noFill();
+    
+    for(var x = 0; x < sizes.length; x++){
+    			ellipse(200, 200, sizes[x], sizes[x]);
+    }
+    
+  }
+
+  </script>
+</head>
+
+<body>
+</body>
+</html>

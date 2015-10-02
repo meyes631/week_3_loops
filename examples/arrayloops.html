@@ -1,0 +1,44 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+	<script language="javascript" type="text/javascript" src="../helpers/p5.js"></script>
+  <style> body {padding: 0; margin: 0;} </style>
+  <script>
+var myArray = [
+	["circle","line","line","line"],
+	["line","circle","line","line"],
+	["line","line","circle","line"],
+	["line","line","line","circle"],
+];
+
+
+
+function setup() {
+
+  createCanvas(400, 400);
+
+  background("black");
+  stroke("white");
+  
+  for(var row = 0; row < myArray.length; row++){
+  	for(var column = 0; column < myArray[row].length;column++){
+  		if (myArray[row][column] == "circle"){
+  			ellipse(row*100, column*100, 100, 100);
+  		}
+
+  		else if (myArray[row][column] == "line")
+  			
+    		line(row*100, column*100, row*100+100 , column*100+100);
+
+  	}
+   
+  }
+  
+}
+
+  </script>
+</head>
+
+<body>
+</body>
+</html>

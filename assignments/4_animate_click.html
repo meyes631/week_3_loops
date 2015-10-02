@@ -1,0 +1,46 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+	<script language="javascript" type="text/javascript" src="../helpers/p5.js"></script>
+  <style> body {padding: 0; margin: 0;} </style>
+  <script>
+
+  //==========================================
+  //Adjust the animated ball by making it change direction when you click 
+  //==========================================
+
+  //Your code STARTS here
+
+  var Yposition = 0;
+  function setup() {
+    createCanvas(windowWidth, windowHeight);
+  }
+
+  function draw() {
+
+    Yposition = Yposition + 1;
+
+    if (Yposition > windowHeight) {
+      Yposition = 0;
+    }
+
+    background("lightblue");
+    ellipse(200, Yposition, 50, 50);
+    
+  }
+
+
+	//Your code ENDS here
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+	<script language="javascript" type="text/javascript" src="../helpers/p5.js"></script>
+  <style> body {padding: 0; margin: 0;} </style>
+  <script>
+
+  //==========================================
+  //Using a for loop, draw lines in a gradient.
+  //==========================================
+
+
+  //Your code STARTS here
+		function setup() {
+
+			createCanvas(windowWidth, windowHeight);
+
+			background('black');
+		}
+
+		function draw() {
+			
+			for(var x = 0; x<windowWidth; x++){
+				stroke(0,x*.75,0);
+				line(x*5, 0, x*5, windowHeight);
+			}
+			
+		}
+		//Your code ENDS here
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+

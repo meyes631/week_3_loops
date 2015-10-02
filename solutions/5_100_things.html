@@ -1,0 +1,55 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+	<script language="javascript" type="text/javascript" src="../helpers/p5.js"></script>
+  <style> body {padding: 0; margin: 0;} </style>
+  <script>
+
+  //==========================================
+  //Create a drawing that:
+
+	// - Has 100 or more things (lines, circles, cats, snowflakes, etc)
+	// - Is animated
+	// - Changes when you click or move your mouse
+	// You will also be graded based on your creativity and ability to do something that is different from any of the examples provided.
+  //==========================================
+
+  //Your code STARTS here
+  function setup(){
+
+     createCanvas(windowWidth, windowHeight);
+
+  }
+
+  function draw(){
+    //I'm using a for loop to draw a grid of squares
+    //that random change their brightness.
+    //The color depends on the x coordinate of my mouse
+    //and the saturation depends on my Y coordinate of my mouse
+    for(var row = 0;row<50;row++){
+      for (var col=0;col<50;col++){
+
+        colorMode(HSB,500)
+        fill(mouseX, mouseY, random(0,500));
+        rect(col*20,row*20, 20,20);
+      }
+
+    }
+    
+  }
+
+
+	//Your code ENDS here
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+

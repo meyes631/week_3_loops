@@ -1,0 +1,48 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+	<script language="javascript" type="text/javascript" src="../helpers/p5.js"></script>
+  <style> body {padding: 0; margin: 0;} </style>
+  <script>
+
+  //==========================================
+  //Using the array, display shapes with each color
+  //==========================================
+
+  var colorArray = [["blue","red","green","purple","yellow"],
+  									["red","green","purple","yellow","blue"],
+  									["green","purple","yellow","blue","red"],
+  									["purple","yellow","blue","red","green"],
+  									["yellow","blue","red","green","purple"]];
+
+  //Your code STARTS here
+		function setup() {
+
+			createCanvas(windowWidth, windowHeight);
+
+    }
+
+		function draw() {
+
+			for(var row=0; row< colorArray.length ; row++){
+        for (var col=0; col < colorArray[row].length ; col++){
+          fill(colorArray[row][col]);
+          rect(col*110, row*110, 100, 100);
+        }
+      }
+			
+		//Your code ENDS here
+  }
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
